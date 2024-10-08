@@ -1,0 +1,382 @@
+*
+{
+    margin: 0;
+}
+
+body {
+	margin:0 auto;
+    
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Ensure the header is on top */
+}
+
+.container { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.topbar {
+    display: flex; 
+    background-color: rgb(255,255,255);
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px; /* Максимальная ширина topbar */
+    width: 100%;
+    
+}
+
+.logo {
+    display: flex;
+}
+
+.logoI {
+    width: auto;
+    height: 150px;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    height: 150px; /* Высота контейнера для навигации */
+    
+}
+
+.nav-container a{
+    text-decoration: none;
+}
+
+.top-nav {
+    align-self: flex-end; /* Позиционируем верхний список справа */
+    background-color: rgba(3,153,178, 0.75); /* Цвет фона с прозрачностью */
+}
+
+.top-nav a{
+    color: white;
+}
+
+.top-nav a:hover{
+    text-decoration: underline;
+}
+
+.top-nav ul{
+    display: flex;
+    list-style: none;
+    padding: 15px;
+}
+
+.top-nav li {
+    margin-right: 30px; /* Расстояние между элементами списка */
+}
+
+.top-nav::before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 570px + 1169px);
+        height: 48px;
+        width: 20px;
+        border-top: 0;
+        background-color: rgba(3,153,178, 0.75);
+}
+
+.top-nav::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 570px + 1169px);
+        border-left: 20px solid rgba(3,153,178, 0.75);
+        border-bottom: 20px solid transparent;
+        transform: rotate(-360deg);
+}
+
+
+.bottom-nav {
+    align-self: flex-end; /* Позиционируем нижний список справа */
+    
+}
+.bottom-nav a
+{
+    color: rgb(108, 153, 53);
+    font-size: 30px;
+}
+
+.bottom-nav a:hover {
+
+    color: rgb(2, 61, 255); /* Белый текст при наведении */
+}
+
+.bottom-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 20px;
+}
+
+.bottom-nav li {
+    margin-right: 40px; /* Расстояние между элементами списка */
+}
+
+/* Slider */
+.hero {
+    width: 100%;
+    height: 650px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* стрелочки */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20%; /* Используем проценты для позиционирования */
+    left: 20%;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    max-width: 25%; /* Ограничиваем ширину относительно ширины окна */
+    margin: 0 auto;
+    background-color: rgba(3,153,178, 0.75); /* Цвет фона с прозрачностью */
+    font-size: 30px;
+    padding: 15px 15px;
+}
+
+
+.hero-content p{
+    color: #ccc;
+}
+
+.hero-content span{
+    font-weight: 800;
+    color: white;
+}
+
+.mainpromo ul{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(244,239,235);
+    gap: 10px;
+    padding: 50px;
+}
+
+.maincontainer{
+    background-color: rgb(244,239,235);  
+}
+
+.lowmain{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1px; 
+    justify-content: center; 
+    margin:0 20%;
+}
+
+.leftmain{
+    grid-column: 1 / 2;
+}
+.block1{
+    margin-top: 15px;
+}
+.block2{
+    margin-top: 15px;  
+}
+.leftmain h3{
+    color: #00a6d1;
+    font-size: 25px;
+}
+.rightmain{
+    grid-column: 2 / 3;
+}
+.rightmain h3{
+    color: #00a6d1;
+    font-size: 25px;
+}
+
+.events-container {
+    width: 85%;
+    height:75px;
+  
+}
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    
+}
+.event-date {
+    display: flex;
+    align-items: baseline;
+    align-items: center;
+    flex-direction: column;
+}
+
+.event-day {
+    font-size: 36px; /* Увеличиваем размер числа */
+    color: rgb(98,129,68);
+}
+
+.event-month {
+    font-size: 14px; /* Размер текста месяца */
+    color: rgb(98,129,68);
+}
+
+.event-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+.event-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(245,114,101);
+}
+.event-time {
+    font-size: 14px;
+    color: #777;
+}
+.event-time span{
+    font-weight: 800;
+}
+.more{
+    background-color: rgb(3,153,178);
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+.more:hover{
+    transform: scale(1.05); /* Увеличиваем кнопку при наведении */
+}
+.readmore{
+    font-size: 20px;
+    color:rgb(245,114,101);
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-container div {
+    text-align: center;
+}
+
+.footer-container h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.subscribe {
+    background-color: #00a6d1;
+    color: #fff;
+    padding: 10px 80px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.subscribe:hover{
+    transform: scale(1.05); /* Увеличиваем кнопку при наведении */
+}
+
+.service-times p {
+    margin: 5px 0;
+    color: #ccc;
+}
+.newsletter {
+    display: flex;
+    flex-direction: column
+}
+
+.connect .social-icons a {
+    margin: 0 5px;
+    color: #ff6347;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px 0;
+    border-top: 1px solid #555;
+}
+
+.footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
